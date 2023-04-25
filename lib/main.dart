@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_4/home.dart';
 import 'aboutUs_page.dart';
 
 void main() {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: aboutUs(),
+      home: HomeScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
