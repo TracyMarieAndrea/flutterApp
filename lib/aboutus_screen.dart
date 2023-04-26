@@ -1,24 +1,21 @@
 import 'package:flutter/material.dart';
 import 'app_drawer.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-class aboutUs extends StatelessWidget {
-  const aboutUs({super.key});
+class AboutUs extends StatelessWidget {
+  const AboutUs({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildAppBar(),
-      drawer: appBarDrawer(),
+      drawer: appBarDrawer(context),
       body: _buildBody(),
     );
   }
 
   AppBar _buildAppBar() {
     return AppBar(
-      backgroundColor: Color.fromRGBO(101, 227, 121, 1),
+      backgroundColor: const Color.fromRGBO(101, 227, 121, 1),
       centerTitle: true,
       title: const Text(
         "PvZ: Plants Wiki",
@@ -33,7 +30,7 @@ class aboutUs extends StatelessWidget {
 
   Container _buildBody() {
     return Container(
-      margin: EdgeInsets.only(top: 50),
+      margin: const EdgeInsets.only(top: 50),
       child: Column(
         children: <Widget>[
           Container(
@@ -50,7 +47,7 @@ class aboutUs extends StatelessWidget {
                 ),
                 border: Border.all(color: Colors.black, width: 1.5),
                 borderRadius: BorderRadius.all(Radius.circular(150))),*/
-            margin: EdgeInsets.all(15),
+            margin: const EdgeInsets.all(15),
             alignment: Alignment.center,
             child: Center(
               child: Padding(
@@ -58,7 +55,7 @@ class aboutUs extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
                   child: Image.asset(
-                    '../assets/logoo.png',
+                    'assets/plant_logo.png',
                     width: 300,
                     height: 300,
                   ),
@@ -67,7 +64,7 @@ class aboutUs extends StatelessWidget {
             ),
           ),
           Container(
-            margin: EdgeInsets.fromLTRB(10, 30, 10, 10),
+            margin: const EdgeInsets.fromLTRB(10, 30, 10, 10),
             alignment: Alignment.center,
             child: Center(
               child: Row(
@@ -87,7 +84,7 @@ class aboutUs extends StatelessWidget {
             ),
           ),
           Container(
-            margin: EdgeInsets.fromLTRB(10, 10, 10, 30),
+            margin: const EdgeInsets.fromLTRB(10, 10, 10, 30),
             alignment: Alignment.center,
             child: Center(
               child: Row(
@@ -107,12 +104,12 @@ class aboutUs extends StatelessWidget {
             ),
           ),
           Container(
-            margin: EdgeInsets.fromLTRB(10, 15, 10, 10),
+            margin: const EdgeInsets.fromLTRB(10, 15, 10, 10),
             alignment: Alignment.center,
             transformAlignment: Alignment.center,
-            child: Center(
+            child: const Center(
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
                 child: Text(
                   'Get to know more about your favorite plants from one of the iconic games, Plants vs. Zombies.',
                   maxLines: 5,
@@ -128,16 +125,16 @@ class aboutUs extends StatelessWidget {
             ),
           ),
           Container(
-            margin: EdgeInsets.fromLTRB(0, 30, 0, 0),
+            margin: const EdgeInsets.fromLTRB(0, 30, 0, 0),
             decoration: BoxDecoration(
-              color: Color.fromARGB(255, 255, 255, 255),
+              color: const Color.fromARGB(255, 255, 255, 255),
               border: Border.all(color: Colors.black, width: 1),
-              borderRadius: BorderRadius.all(
+              borderRadius: const BorderRadius.all(
                 Radius.circular(10),
               ),
             ),
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(35, 10, 35, 10),
+            child: const Padding(
+              padding: EdgeInsets.fromLTRB(35, 10, 35, 10),
               child: Text(
                 'Explore',
                 style: TextStyle(

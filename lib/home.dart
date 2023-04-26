@@ -21,7 +21,7 @@ class HomeScreen extends StatelessWidget {
               color: Colors.white),
         ),
       ),
-      drawer: appBarDrawer(),
+      drawer: appBarDrawer(context),
       body: SingleChildScrollView(
         child: Container(
             padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 25.0),

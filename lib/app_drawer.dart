@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_4/aboutus_screen.dart';
+import 'package:flutter_application_4/home.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-Widget appBarDrawer() {
+Widget appBarDrawer(BuildContext context) {
   return Drawer(
       child: ListView(
     padding: EdgeInsets.zero,
@@ -10,7 +12,7 @@ Widget appBarDrawer() {
       const SizedBox(
         height: 10,
       ),
-      homeTile(),
+      homeTile(context),
       const SizedBox(
         height: 20,
       ),
@@ -18,7 +20,7 @@ Widget appBarDrawer() {
       const SizedBox(
         height: 20,
       ),
-      aboutTile(),
+      aboutTile(context),
       const SizedBox(
         height: 365,
       ),
@@ -52,7 +54,7 @@ DrawerHeader drawerHeader() {
   );
 }
 
-ListTile homeTile() {
+ListTile homeTile(BuildContext context) {
   return ListTile(
     leading: Padding(
       padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 13),
@@ -67,7 +69,12 @@ ListTile homeTile() {
       style:
           TextStyle(fontFamily: 'Poppins', fontSize: 18, color: Colors.black),
     ),
-    onTap: () {},
+    onTap: () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const HomeScreen()),
+      );
+    },
   );
 }
 
@@ -90,7 +97,7 @@ ListTile plantTile() {
   );
 }
 
-ListTile aboutTile() {
+ListTile aboutTile(BuildContext context) {
   return ListTile(
     leading: Padding(
       padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
@@ -105,7 +112,12 @@ ListTile aboutTile() {
       style:
           TextStyle(fontFamily: 'Poppins', fontSize: 18, color: Colors.black),
     ),
-    onTap: () {},
+    onTap: () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const AboutUs()),
+      );
+    },
   );
 }
 
