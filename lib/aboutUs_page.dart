@@ -11,7 +11,7 @@ class aboutUs extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildAppBar(),
-      drawer: AppBarDrawer(),
+      drawer: appBarDrawer(),
       body: _buildBody(),
     );
   }

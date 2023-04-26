@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_application_4/home.dart';
-import 'aboutUs_page.dart';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    statusBarColor: Colors.white70,
+    systemNavigationBarColor: Colors.transparent
+  ));
+  SystemChrome.setEnabledSystemUIMode(
+    SystemUiMode.manual, overlays: [SystemUiOverlay.top]
+  );
   runApp(const MyApp());
 }
 
@@ -17,7 +24,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomeScreen(),
+      home: const HomeScreen(),
       debugShowCheckedModeBanner: false,
     );
   }

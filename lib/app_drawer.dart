@@ -1,48 +1,50 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-Widget AppBarDrawer() {
+Widget appBarDrawer() {
   return Drawer(
       child: ListView(
     padding: EdgeInsets.zero,
     children: <Widget>[
-      _DrawerHeader(),
-      SizedBox(
+      drawerHeader(),
+      const SizedBox(
         height: 10,
       ),
-      _HomeListTile(),
-      SizedBox(
+      homeTile(),
+      const SizedBox(
         height: 20,
       ),
-      _PlantsListTile(),
-      SizedBox(
+      plantTile(),
+      const SizedBox(
         height: 20,
       ),
-      _AboutListTile()
+      aboutTile(),
+      const SizedBox(
+        height: 365,
+      ),
+      exitTile()
     ],
   ));
 }
 
-DrawerHeader _DrawerHeader() {
+DrawerHeader drawerHeader() {
   return DrawerHeader(
-    decoration: BoxDecoration(
-      color: Color(0xff65E379),
+    decoration: const BoxDecoration(
+      color: Color.fromRGBO(50, 217, 78, 1.0),
     ),
     child: Column(
       children: [
         Image.asset(
-          '../assets/logoo.png',
+          "assets/plant_logo.png",
           width: 100,
           height: 100,
         ),
-        Text(
+        const Text(
           'PvZ: Plants Wiki',
           style: TextStyle(
-              fontFamily: 'Poppins',
-              fontSize: 25,
-              fontWeight: FontWeight.w800,
+              fontFamily: 'Outfit',
+              fontSize: 20,
+              fontWeight: FontWeight.normal,
               color: Colors.white),
         ),
       ],
@@ -50,12 +52,15 @@ DrawerHeader _DrawerHeader() {
   );
 }
 
-ListTile _HomeListTile() {
+ListTile homeTile() {
   return ListTile(
-    leading: SvgPicture.asset(
-      '../assets/Home-icon.svg',
-      width: 30,
-      height: 30,
+    leading: Padding(
+      padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 13),
+      child: SvgPicture.asset(
+        'assets/Home-icon.svg',
+        width: 30,
+        height: 30,
+      ),
     ),
     title: const Text(
       'Home',
@@ -66,12 +71,15 @@ ListTile _HomeListTile() {
   );
 }
 
-ListTile _PlantsListTile() {
+ListTile plantTile() {
   return ListTile(
-    leading: SvgPicture.asset(
-      '../assets/plant-icon.svg',
-      width: 35,
-      height: 35,
+    leading: Padding(
+      padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 14),
+      child: SvgPicture.asset(
+        'assets/plant-icon.svg',
+        width: 35,
+        height: 35,
+      ),
     ),
     title: const Text(
       'Plants',
@@ -82,17 +90,39 @@ ListTile _PlantsListTile() {
   );
 }
 
-ListTile _AboutListTile() {
+ListTile aboutTile() {
   return ListTile(
-    leading: SvgPicture.asset(
-      '../assets/about-icon.svg',
-      width: 30,
-      height: 30,
+    leading: Padding(
+      padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+      child: SvgPicture.asset(
+        'assets/about-icon.svg',
+        width: 30,
+        height: 30,
+      ),
     ),
     title: const Text(
       'About',
       style:
           TextStyle(fontFamily: 'Poppins', fontSize: 18, color: Colors.black),
+    ),
+    onTap: () {},
+  );
+}
+
+ListTile exitTile() {
+  return ListTile(
+    leading: Padding(
+      padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 9),
+      child: SvgPicture.asset(
+        'assets/exit.svg',
+        width: 30,
+        height: 30,
+      ),
+    ),
+    title: const Text(
+      'Exit',
+      style:
+      TextStyle(fontFamily: 'Poppins', fontSize: 20, color: Colors.black),
     ),
     onTap: () {},
   );
